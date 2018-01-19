@@ -37,6 +37,7 @@ header {
 .results {
     margin: auto;
     text-align: center;
+    font-weight: bold;
 }
 
 .results ul {

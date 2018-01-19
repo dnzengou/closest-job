@@ -1,16 +1,12 @@
 var $input = $('input');
-var $job = $('#job');
+var $LastName = $('#lastName');
 
 $(document).ready(function() {
     var client = algoliasearch('WJAYX27JB5', '7811aa9e37d97771767ce690b7331f92');
-    var index = client.initIndex('jobs');
+    var index = client.initIndex('GSK_Employees_information');
 
-    $('#typeahead-algolia').typeahead({
-        highlight: true,
-        hint: true,
-        minLength: 1
-    }, {
-        source: index.ttAdapter({ "hitsPerPage": 6 }),
-        displayKey: 'job'
+    $('#typeahead-algolia').typeahead(null, {
+        source: index.ttAdapter({ "hitsPerPage": 10 }),
+        displayKey: 'LastName'
     });
 });
